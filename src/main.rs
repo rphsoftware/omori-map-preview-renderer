@@ -119,6 +119,7 @@ impl FunnyBitmap {
 }
 
 fn render_image(path: &String) -> std::io::Result<()> {
+    println!("Starting: {}", path);
     // Load map data
     let mut fd = File::open(format!("maps/{}", path.clone()))?;
     let mut contents = String::new();
@@ -318,11 +319,15 @@ fn render_image(path: &String) -> std::io::Result<()> {
     let base = path.split(".").collect::<Vec<&str>>();
     target.save(String::from(format!("render/{}.png", base[0])))?;
     scale150(format!("render/{}.png", base[0]), format!("scaled/{}.png", base[0]));
+
+    println!("Finished: {}", path);
     Ok(())
 }
 
 fn wrapper(z: &String) {
-    render_image(z).unwrap();
+    if let Err(e) = render_image(z) {
+        println!("Failed: {}! Reason: {:?}", z, e);
+    }
 }
 
 fn main() -> std::io::Result<()> {
