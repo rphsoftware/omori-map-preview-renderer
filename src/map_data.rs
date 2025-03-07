@@ -28,8 +28,8 @@ pub struct TileLayer {
 
     pub data: Vec<i32>,
 
-    pub properties: Option<HashMap<String, String>>,
-    pub propertytypes: Option<HashMap<String, String>>
+    // pub properties: Option<HashMap<String, String>>,
+    // pub propertytypes: Option<HashMap<String, String>>
 }
 
 #[derive(Deserialize, Debug)]
@@ -43,8 +43,8 @@ pub struct ObjectGroup {
     pub visible: bool,
     pub opacity: f64,
 
-    pub properties: Option<HashMap<String, String>>,
-    pub propertytypes: Option<HashMap<String, String>>
+    // pub properties: Option<HashMap<String, String>>,
+    // pub propertytypes: Option<HashMap<String, String>>
 }
 
 #[derive(Deserialize, Debug)]
@@ -90,7 +90,7 @@ pub struct TiledMap {
     pub tiledversion: String,
     pub tileheight: i32,
     pub tilewidth: i32,
-    pub version: f64,
+    // pub version: f64,
     pub tilesets: Vec<InMapTileset>
 }
 

@@ -119,7 +119,6 @@ impl FunnyBitmap {
 }
 
 fn render_image(path: &String) -> std::io::Result<()> {
-    println!("{}", path);
     // Load map data
     let mut fd = File::open(format!("maps/{}", path.clone()))?;
     let mut contents = String::new();

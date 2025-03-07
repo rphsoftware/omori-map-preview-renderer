@@ -22,7 +22,7 @@
           buildInputs = with pkgs; [
             (rust-bin.stable.latest.default.override {
               extensions = [ "rust-src" ];
-              targets = ["x86_64-unknown-linux-gnu" "arm64e-apple-darwin" "x86_64-pc-windows-gnu"];
+              targets = ["x86_64-unknown-linux-gnu" "aarch64-apple-darwin" "x86_64-pc-windows-gnu"];
             })
             cargo-bloat
           ] ++ native-deps;
