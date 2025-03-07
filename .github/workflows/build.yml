@@ -10,6 +10,10 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions-rust-lang/setup-rust-toolchain@v1
       - run: cargo build --release
+      - uses: actions/upload-artifact@v4
+        with:
+          name: omori-map-preview-renderer-linux-master
+          path: target/x86_64-unknown-linux-gnu/renderifier
   build_windows:
     name: cargo build windows
     runs-on: windows-latest
@@ -17,3 +21,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions-rust-lang/setup-rust-toolchain@v1
       - run: cargo build --release
+      - uses: actions/upload-artifact@v4
+        with:
+          name: omori-map-preview-renderer-windows-master.exe
+          path: target/x86_64-pc-windows-msvc/renderifier.exe
